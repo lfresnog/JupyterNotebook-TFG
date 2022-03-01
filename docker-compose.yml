@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+ jupyter:
+  build: ./jupyter
+  ports: 
+    - "8888:8888"
+  volumes:
+    - ./jupyter:/app
+  entrypoint: 
+    jupyter notebook --ip='0.0.0.0' --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
